@@ -213,6 +213,7 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
     <Compile Include="Assets\Scripts\GameLogic\BombScript.cs" />
+    <Compile Include="Assets\Scripts\GameLogic\ButterflyManager.cs" />
     <Compile Include="Assets\Scripts\GameLogic\EnvironmentScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\FruitManager.cs" />
     <Compile Include="Assets\Scripts\GameLogic\FruitScript.cs" />
@@ -223,6 +224,7 @@
     <Compile Include="Assets\Scripts\UI\ScoreScript.cs" />
     <None Include="Assets\Content\ThreeD\AssetStore\MenuBoard\Doc\ReadMe.txt" />
     <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
+    <None Include="Assets\Content\ThreeD\AssetStore\Trashcans\README_Import_to_2018-HDRP.txt" />
     <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
     <None Include="Assets\Content\ThreeD\AssetStore\City Background\Read_me.txt" />
     <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />

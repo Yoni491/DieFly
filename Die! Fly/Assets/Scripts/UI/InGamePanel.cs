@@ -7,11 +7,9 @@ using UnityEngine.UI;
 public class InGamePanel : MonoBehaviour
 {
     [SerializeField] Text m_ScoreText = null;
-    [SerializeField] Text m_StreakText = null;
     [SerializeField] Text m_ComboText = null;
     [SerializeField] GameObject m_ComboPanel = null;
     static Text s_ScoreText;
-    static Text s_StreakText;
     static Text s_ComboText;
     static GameObject s_ComboPanel;
     public static int m_Score;
@@ -29,7 +27,6 @@ public class InGamePanel : MonoBehaviour
      private void Start()
      {
           s_ScoreText = m_ScoreText;
-          s_StreakText = m_StreakText;
           s_ComboText = m_ComboText;
           s_ComboPanel = m_ComboPanel;
      }
@@ -42,23 +39,6 @@ public class InGamePanel : MonoBehaviour
      public static void updateScore(int scoreToAdd)
      {
           m_Score += scoreToAdd;
-          s_ScoreText.text = "Score: " + m_Score.ToString();
-          updateStreak(1);
-     }
-
-     public static void updateStreak(int streakToAdd)
-     {
-          if(streakToAdd == 0)
-          {
-               m_Streak = 0;
-          }
-
-          else
-          {
-               m_Streak += streakToAdd;
-          }
-
-          s_StreakText.text = "Streak: " + m_Streak.ToString();
      }
 
      public static void addCombo(int comboToAdd)
