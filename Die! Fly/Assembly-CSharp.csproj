@@ -219,7 +219,8 @@
     <Compile Include="Assets\Scripts\GameLogic\FruitManager.cs" />
     <Compile Include="Assets\Scripts\GameLogic\FruitScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\MainManager.cs" />
-    <Compile Include="Assets\Scripts\GameLogic\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\GameLogic\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GameLogic\WeaponScript.cs" />
     <Compile Include="Assets\Scripts\UI\InGamePanel.cs" />
     <Compile Include="Assets\Scripts\UI\PanelManager.cs" />
     <Compile Include="Assets\Scripts\UI\ScoreScript.cs" />

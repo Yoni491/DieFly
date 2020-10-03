@@ -80,4 +80,8 @@ public class ButterflyScript : MonoBehaviour
     {
         GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3042074835687824507}
   - component: {fileID: 6299577435794761293}
   - component: {fileID: 310767230593211060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zvov
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,8 @@ GameObject:
   - component: {fileID: 5058006767515057085}
   - component: {fileID: 5995387357520264308}
   - component: {fileID: 3831043762806795890}
-  m_Layer: 0
+  - component: {fileID: 294840680}
+  m_Layer: 8
   m_Name: Mosquito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,3 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2480681a9bad54abbcc1a89fdc91a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &294840680
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5391779271276768720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.349749, y: 15.973434, z: 30.370462}
+  m_Center: {x: -0.26965597, y: -0.44298875, z: -2.9550328}
