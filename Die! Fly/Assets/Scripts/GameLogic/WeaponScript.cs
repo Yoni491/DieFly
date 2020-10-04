@@ -20,7 +20,7 @@ public class WeaponScript : MonoBehaviour
     void Start()
     {
         m_StartingWeaponSlotPos = m_WeaponSlot.transform.localPosition;
-        EquipWeapon(0);
+        EquipWeapon(2);
     }
 
     // Update is called once per frame

@@ -55,7 +55,6 @@ GameObject:
   - component: {fileID: 1401863739247696044}
   - component: {fileID: 1816264769680231551}
   - component: {fileID: 6923732360819482767}
-  - component: {fileID: 1431528250781075017}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -123,20 +122,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1431528250781075017
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111527545390259226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2432090755550338912, guid: a5ccb80224cf8f14a8c3c5e03bad55c6, type: 3}
 --- !u!1 &5566991966459705735
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +134,7 @@ GameObject:
   - component: {fileID: 4886834352375653334}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
