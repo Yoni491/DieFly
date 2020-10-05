@@ -77,13 +77,21 @@ public class FlyScript : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.Normalize(m_CurrentflyingPoint - transform.position) * m_Speed;
         isFlyingToPoint = true;
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Weapon")
         {
             //TODO: ADD SCORE(WITH FUNCTION)
-            if (--m_CurrentLife == 0)
+            if (--m_CurrentLife <= 0)
                 Destroy(gameObject);
         }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //            {
+    //        //TODO: ADD SCORE(WITH FUNCTION)
+    //        if (--m_CurrentLife == 0)
+    //            Destroy(gameObject);
+    //    }
+    //}
 }

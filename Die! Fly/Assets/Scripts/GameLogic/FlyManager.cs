@@ -32,7 +32,7 @@ public class FlyManager : MonoBehaviour
          if (m_Timer >= m_TimeToCreateFly)
          {
               m_Timer = 0;
-              m_TimeToCreateFly = Random.Range(4, 5);
+              m_TimeToCreateFly = Random.Range(0.5f, 1);
               addNewFlyToGame();
          }
     }
@@ -40,7 +40,7 @@ public class FlyManager : MonoBehaviour
     private void addNewFlyToGame()
     {
 
-        int butterflyNum = Random.Range(0, 2);
+        int butterflyNum = Random.Range(0, 3);
         int life=0;
         float speed = 1.3f;
         if (butterflyNum == 0)
@@ -50,6 +50,10 @@ public class FlyManager : MonoBehaviour
         else if (butterflyNum == 1)
         {
             life = 3;
+        }
+        else if (butterflyNum == 2)
+        {
+            life = 10;
         }
         GameObject g_butterfly = Instantiate(m_FlyPrefabs[butterflyNum], m_SpawnPoints[0].position, Quaternion.identity, this.transform);
         g_butterfly.GetComponent<FlyScript>().CreateFly(life, speed, 1);
