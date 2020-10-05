@@ -68,19 +68,19 @@
     <Compile Include="Assets\Content\ThreeD\AssetStore\CoffeeShopStarterPack\Scripts\Editor\ScreenShotHelperEditor.cs" />
     <Compile Include="Assets\Content\ThreeD\AssetStore\CoffeeShopStarterPack\Scripts\Editor\ScreenShotImportSettings.cs" />
     <Compile Include="Assets\Content\ThreeD\AssetStore\CoffeeShopStarterPack\Scripts\Editor\SliceHelperEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Demos\Editor\DemoInputManagerEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Demos\Editor\PermissionsDemoBuildProcessor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\Controller\GvrControllerVisualEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\Controller\GvrLaserPointerEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\Controller\GvrLaserVisualEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\Controller\GvrTooltipEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\EventSystem\GvrPointerScrollInputEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\GvrBuildProcessor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\GvrEditorEmulatorEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\GvrEditorMenu.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\GvrEditorSettings.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\GvrHeadsetEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Editor\InstantPreviewEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Demos\Editor\DemoInputManagerEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Demos\Editor\PermissionsDemoBuildProcessor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\Controller\GvrControllerVisualEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\Controller\GvrLaserPointerEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\Controller\GvrLaserVisualEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\Controller\GvrTooltipEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\EventSystem\GvrPointerScrollInputEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\GvrBuildProcessor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\GvrEditorEmulatorEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\GvrEditorMenu.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\GvrEditorSettings.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\GvrHeadsetEditor.cs" />
+    <Compile Include="Assets\StreamingAssets\GoogleVR\Editor\InstantPreviewEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/yonie/DieFly/Die! Fly/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
@@ -307,7 +307,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Google.ProtocolBuffers">
-      <HintPath>C:/Users/yonie/DieFly/Die! Fly/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
+      <HintPath>C:/Users/yonie/DieFly/Die! Fly/Assets/StreamingAssets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/yonie/DieFly/Die! Fly/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>

@@ -11,6 +11,8 @@ public class FlyScript : MonoBehaviour
     private float RotationSpeed = 300f;
     private bool isFlyingToPoint = false;
     private bool isFlyingToFood = false;
+    private float m_TimeFlyingToPoint = 0;
+    private float m_MaxTimeFlyingToPoint = 0;
     //private AudioClip m_Sound;
     // material
 
@@ -30,6 +32,8 @@ public class FlyScript : MonoBehaviour
             Quaternion rotTarget = Quaternion.LookRotation(m_CurrentflyingPoint - this.transform.position);
             this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, rotTarget, RotationSpeed * Time.deltaTime);
         }
+        m_TimeFlyingToPoint += Time.deltaTime;
+
     }
 
     void FlyingAlgorithm()
@@ -45,16 +49,13 @@ public class FlyScript : MonoBehaviour
         }
         if(isFlyingToPoint)
         {
-            if (Vector3.Distance(transform.position, m_CurrentflyingPoint) < 0.1f)
+            if (Vector3.Distance(transform.position, m_CurrentflyingPoint) < 0.1f || (m_TimeFlyingToPoint > m_MaxTimeFlyingToPoint))
             {
-                if (isFlyingToFood)
-                {
-                    EatFood();
-                }
-                else
-                {
-                    FlyToNewPoint();
-                }
+
+                FlyToNewPoint();
+                m_MaxTimeFlyingToPoint = Random.Range(0, 1f);
+                m_TimeFlyingToPoint = 0;
+
             }
         }
     }
@@ -64,7 +65,7 @@ public class FlyScript : MonoBehaviour
         if (Random.Range(0, 8) < 1)//flying to food
         {
             m_CurrentflyingPoint = FlyManager.s_FoodPoints[0].position;
-            isFlyingToFood = true;
+            //isFlyingToFood = true;
         }
         else//flying around
         {
@@ -76,16 +77,13 @@ public class FlyScript : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.Normalize(m_CurrentflyingPoint - transform.position) * m_Speed;
         isFlyingToPoint = true;
     }
-    void EatFood()
+    private void OnTriggerExit(Collider other)
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "Weapon")
+        if (other.transform.tag == "Weapon")
         {
             //TODO: ADD SCORE(WITH FUNCTION)
-            Destroy(gameObject);
+            if (--m_CurrentLife == 0)
+                Destroy(gameObject);
         }
     }
 }

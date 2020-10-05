@@ -19,7 +19,7 @@ public class InGamePanel : MonoBehaviour
     static float s_LastFruitSliceTime;
     static int s_ComboStreak;
 
-     public void ReturnToMainMenu()
+     public static void ReturnToMainMenu()
      {
           SceneManager.LoadScene("MainMenu");
      }
