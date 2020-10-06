@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class EnvironmentScript : MonoBehaviour
 {
-     [SerializeField]
-     private Transform m_DirectLight = null;
-     private Quaternion m_DirectLightStartPos;
-     private float m_RotationFactor = 0.005f;
-     private float m_NightValue = 0.99f;
 
      [SerializeField]
      private GameObject[] m_Cars = null;
@@ -26,7 +21,6 @@ public class EnvironmentScript : MonoBehaviour
           m_CarIndex = Random.Range(0, 2);
           m_Car = m_Cars[m_CarIndex];
 
-          m_DirectLightStartPos = m_DirectLight.transform.rotation;
      }
 
      // Update is called once per frame
@@ -34,20 +28,8 @@ public class EnvironmentScript : MonoBehaviour
      {
           Vector3 carPosition = m_Car.transform.position;
 
-          m_DirectLight.Rotate(m_RotationFactor, 0, 0);
-          resetLighting();
-
           m_Car.transform.position = new Vector3(carPosition.x, carPosition.y, carPosition.z + m_CarSpeed);
           resetCar(carPosition);
-     }
-
-     private void resetLighting()
-     {
-          if (m_DirectLight.rotation.x >= m_NightValue)
-          {
-               // set new level
-               m_DirectLight.transform.rotation = m_DirectLightStartPos;
-          }
      }
 
      private void resetCar(Vector3 i_CarPosition)

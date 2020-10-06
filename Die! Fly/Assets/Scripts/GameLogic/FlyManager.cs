@@ -18,7 +18,7 @@ public class FlyManager : MonoBehaviour
     public static Transform[] s_FoodPoints;
     private float m_Timer;
     private float m_TimeToCreateFly;
-
+    public static int s_Level=1;
     void Start()
     {
        s_PlayerInteractionPoints = m_PlayerInteractionPoints;
@@ -29,33 +29,121 @@ public class FlyManager : MonoBehaviour
     void Update()
     {
          m_Timer += Time.deltaTime;
-         if (m_Timer >= m_TimeToCreateFly)
-         {
-              m_Timer = 0;
-              m_TimeToCreateFly = Random.Range(4f, 5);
-              addNewFlyToGame();
-         }
+        if(s_Level ==1)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                int FlyType = Random.Range(0, 10);
+                if(FlyType==9)
+                {
+                    addNewFlyToGame(1);
+                }
+                else
+                {
+                    addNewFlyToGame(0);
+                }
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(3.5f, 4);
+            }
+        }
+        if (s_Level == 2)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                int FlyType = Random.Range(0, 10);
+                if (FlyType >= 5)
+                {
+                    addNewFlyToGame(1);
+                }
+                else
+                {
+                    addNewFlyToGame(0);
+                }
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(3.5f, 4);
+            }
+        }
+        if (s_Level == 3)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                int FlyType = Random.Range(0, 10);
+                if (FlyType == 9)
+                {
+                    addNewFlyToGame(2);
+                }
+                else if (FlyType >= 3)
+                {
+                    addNewFlyToGame(1);
+                }
+                else
+                {
+                    addNewFlyToGame(0);
+                }
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(2f, 3);
+            }
+
+        }
+        if (s_Level == 4)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                int FlyType = Random.Range(0, 10);
+                if (FlyType >= 6)
+                {
+                    addNewFlyToGame(2);
+                }
+                else if (FlyType >= 2)
+                {
+                    addNewFlyToGame(1);
+                }
+                else
+                {
+                    addNewFlyToGame(0);
+                }
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(2f, 3);
+            }
+
+        }
+        if (s_Level == 5)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                int FlyType = Random.Range(0, 10);
+                if (FlyType >= 3)
+                {
+                    addNewFlyToGame(2);
+                }
+                else
+                {
+                    addNewFlyToGame(1);
+                }
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(2f, 3);
+            }
+        }
+        
     }
 
-    private void addNewFlyToGame()
+    private void addNewFlyToGame(int i_FlyType)
     {
-
-        int butterflyNum = Random.Range(0, 3);
         int life=0;
         float speed = 1.3f;
-        if (butterflyNum == 0)
+        if (i_FlyType == 0)
         {
             life = 1;
         }
-        else if (butterflyNum == 1)
+        else if (i_FlyType == 1)
         {
             life = 3;
         }
-        else if (butterflyNum == 2)
+        else if (i_FlyType == 2)
         {
             life = 10;
         }
-        GameObject g_butterfly = Instantiate(m_FlyPrefabs[butterflyNum], m_SpawnPoints[0].position, Quaternion.identity, this.transform);
+        GameObject g_butterfly = Instantiate(m_FlyPrefabs[i_FlyType], m_SpawnPoints[0].position, Quaternion.identity, this.transform);
         g_butterfly.GetComponent<FlyScript>().CreateFly(life, speed, 1);
     }
 }

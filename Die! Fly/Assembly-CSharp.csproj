@@ -212,12 +212,12 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\GvrCursorHelper.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
-    <Compile Include="Assets\Scripts\GameLogic\BombScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\EnvironmentScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\FlyManager.cs" />
     <Compile Include="Assets\Scripts\GameLogic\FlyScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\FruitManager.cs" />
     <Compile Include="Assets\Scripts\GameLogic\FruitScript.cs" />
+    <Compile Include="Assets\Scripts\GameLogic\LevelScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\MainManager.cs" />
     <Compile Include="Assets\Scripts\GameLogic\PlayerController.cs" />
     <Compile Include="Assets\Scripts\GameLogic\WeaponContainerScript.cs" />
