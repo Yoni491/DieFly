@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 494}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -113,10 +113,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 915, y: 444}
-  m_MaxSize: {x: 22010, y: 10022}
+  m_MinSize: {x: 917, y: 444}
+  m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 32
+  controlID: 76
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 444}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 33
+  controlID: 56
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,8 +161,8 @@ MonoBehaviour:
     y: 0
     width: 956
     height: 429
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 429
     width: 956
     height: 518
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -240,8 +240,8 @@ MonoBehaviour:
     y: 0
     width: 335
     height: 631
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -318,8 +318,8 @@ MonoBehaviour:
     y: 0
     width: 278
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -442,9 +442,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -206.23407, y: -7.389698, z: 131.62328}
+    m_Target: {x: -206.87021, y: -7.8141794, z: 131.4249}
     speed: 2
-    m_Value: {x: -206.23407, y: -7.389698, z: 131.62328}
+    m_Value: {x: -206.87021, y: -7.8141794, z: 131.4249}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -473,13 +473,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.12454637, y: -0.7552823, z: 0.15035339, w: 0.625646}
+    m_Target: {x: 0.13625948, y: -0.73265415, z: 0.15386361, w: 0.6488307}
     speed: 2
-    m_Value: {x: 0.12454624, y: -0.75528145, z: 0.15035322, w: 0.62564534}
+    m_Value: {x: 0.13602826, y: -0.7336251, z: 0.15406752, w: 0.6477297}
   m_Size:
-    m_Target: 2.247029
+    m_Target: 1.7582891
     speed: 2
-    m_Value: 2.247029
+    m_Value: 2.058289
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -624,23 +624,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: a27affffd884ffffca99ffff56adffff90c6ffffd2c6ffffdec6ffffe2c6fffff4c6ffff08c7ffff28d1ffff34d1ffff38d1ffff92d3ffff9ed3ffffa2d3ffff38dbffff50dbffff5cdbffff60dbffff50efffff74f9ffffba460000c4480000e24e00006c520000
+      m_SelectedIDs: 76ba0000
+      m_LastClickedID: 47734
+      m_ExpandedIDs: 6ec2ffff14c5ffff4ec5ffff8cc6ffff94c6ffff76fbffffd0ac00005cd000005ed0000064d00000f8e00000fee00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: ButterflyRoute
-        m_OriginalName: ButterflyRoute
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 17236
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -715,20 +715,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Content/ThreeD/Prefabs/Flys
+    - Assets/Scripts/GameLogic
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Content/ThreeD/Prefabs/Flys
+  - Assets/Scripts/GameLogic
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\yonie\DieFly\Die! Fly
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f6390000
-    m_LastClickedID: 14838
-    m_ExpandedIDs: 000000007834000080370000263800009c390000f6390000ca3a0000d23d0000a23e00004a3f0000244000004c5700004e570000
+    m_SelectedIDs: 86310000
+    m_LastClickedID: 12678
+    m_ExpandedIDs: 00000000f62f000034330000e033000076350000da350000b6360000ec390000ce3a00008c3b00008a3c00002e54000030540000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -756,7 +756,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007834000080370000263800009c390000f6390000ca3a0000d23d0000a23e00004a3f0000244000004c5700004e570000
+    m_ExpandedIDs: 00000000f62f000034330000e033000076350000da350000b6360000ec390000ce3a00008c3b00008a3c00002e54000030540000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

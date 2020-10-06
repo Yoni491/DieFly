@@ -2,53 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
-     
 
-     //private void Start()
-     //{
-         
-     //     //s_hearts = m_Hearts;
-     //     //s_Life = m_Life;
-     //}
+    [SerializeField]
+    Text m_LifeText = null;
+    int m_Life = 100;
+    public static int s_Life;
 
-     //private void Update()
-     //{
-          
-     //}
+    private void Start()
+    {
+        s_Life = m_Life;
+    }
 
-     //[SerializeField]
-     //GameObject[] m_Hearts = null;
-     //[SerializeField] int m_Life = 0;
-     //static int s_Life;
-     //static GameObject[] s_hearts;
+    private void Update()
+    {
 
+    }
 
+    public static void LoseLife(int Amount)
+    {
+        s_Life -= Amount;
+        if (s_Life <= 0)
+        {
+            LoseGame();
+        }
 
-     // public static void LoseLife(int Amount)
-     // {
-     //      s_Life -= Amount;
-     //      InGamePanel.updateStreak(0);
-     //      if(s_Life <= 0)
-     //      {
-     //           LoseGame();
-     //      }
+        else
+        {
+            //s_hearts[s_Life].GetComponent<MeshRenderer>().enabled = false;
+        }
 
-     //      else
-     //      {
-     //           s_hearts[s_Life].GetComponent<MeshRenderer>().enabled = false;
-     //      }
+    }
 
-     // }
-
-     // static void LoseGame()
-     // {
-     //      PanelManager.b_PlayerLost = true;
-     //      InGamePanel.resetCombo();
-     //      ScoreScript.AddScore(InGamePanel.m_Score);
-     //      SceneManager.LoadScene("MainMenu");
-     // }
+    static void LoseGame()
+    {
+        PanelManager.b_PlayerLost = true;
+        ScoreScript.AddScore(InGamePanel.m_Score);
+        SceneManager.LoadScene("MainMenu");
+    }
 }
 

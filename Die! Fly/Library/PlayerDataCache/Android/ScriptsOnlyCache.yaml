@@ -1,17 +1,20 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ButterflyManager
-    - ButterflyScript
     - EnvironmentScript
+    - FlyManager
+    - FlyScript
     - GvrEditorEmulator
     - GvrHeadset
     - InGamePanel
     - MainManager
+    - MainMenuButtonScript
     - PanelManager
     - PlayerController
     - ScoreScript
+    - WeaponContainerScript
     - WeaponScript
+    - WeaponStore
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -20,7 +23,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -64,6 +66,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 9754}
     - Class: 114
@@ -71,38 +75,46 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9984}
     - Class: 114
-      Script: {instanceID: 10186}
+      Script: {instanceID: 10042}
     - Class: 114
-      Script: {instanceID: 10434}
+      Script: {instanceID: 10188}
     - Class: 114
-      Script: {instanceID: 10454}
+      Script: {instanceID: 10436}
     - Class: 114
-      Script: {instanceID: 10814}
+      Script: {instanceID: 10456}
     - Class: 114
-      Script: {instanceID: 10862}
+      Script: {instanceID: 10528}
     - Class: 114
-      Script: {instanceID: 11052}
+      Script: {instanceID: 10818}
     - Class: 114
-      Script: {instanceID: 11096}
+      Script: {instanceID: 10866}
     - Class: 114
-      Script: {instanceID: 11226}
+      Script: {instanceID: 11056}
     - Class: 114
-      Script: {instanceID: 11238}
+      Script: {instanceID: 11100}
     - Class: 114
-      Script: {instanceID: 11400}
+      Script: {instanceID: 11230}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 11342}
     - Class: 114
-      Script: {instanceID: 11802}
+      Script: {instanceID: 11406}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 11478}
+    - Class: 114
+      Script: {instanceID: 11534}
+    - Class: 114
+      Script: {instanceID: 11808}
+    - Class: 114
+      Script: {instanceID: 11822}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 134
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -146,19 +158,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9984}
     - Class: 114
-      Script: {instanceID: 10434}
+      Script: {instanceID: 10436}
     - Class: 114
-      Script: {instanceID: 10494}
+      Script: {instanceID: 10496}
     - Class: 114
-      Script: {instanceID: 10862}
+      Script: {instanceID: 10866}
     - Class: 114
-      Script: {instanceID: 11096}
+      Script: {instanceID: 11100}
     - Class: 114
-      Script: {instanceID: 11400}
+      Script: {instanceID: 11406}
     - Class: 114
-      Script: {instanceID: 11712}
+      Script: {instanceID: 11718}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 11822}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -312,6 +324,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WeaponContainerScript
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -530,6 +548,12 @@ ScriptsOnlyBuild:
     className: BasicCameraControl
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenuButtonScript
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -593,7 +617,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ButterflyScript
+    className: FlyScript
   - hash:
       serializedVersion: 2
       Hash: 1f8286dbbba9b39b9120dec32b8944e4
@@ -638,10 +662,10 @@ ScriptsOnlyBuild:
     className: GvrBetaHeadset
   - hash:
       serializedVersion: 2
-      Hash: 515e929a4a388713fb001b790ea384c0
+      Hash: f5f3bcbc00ddc04ddec9bc7ccb98626c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ButterflyManager
+    className: FlyManager
   - hash:
       serializedVersion: 2
       Hash: 70cfd742f4c661cbe458cc49e4e4434e
@@ -792,6 +816,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 3fc86b1484dc1aa34daa069612f46680
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WeaponStore
   - hash:
       serializedVersion: 2
       Hash: b5ad3eafc85b336aa910dba2e7687591
@@ -1072,4 +1102,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/yonie/DieFly/Die! Fly/android.apk
+  playerPath: "C:/Users/yonie/Desktop/\u05E4\u05D9\u05EA\u05D5\u05D7 \u05DE\u05E6\u05D9\u05D0\u05D5\u05EA
+    \u05DE\u05D3\u05D5\u05DE\u05D4/android.apk"
