@@ -93,7 +93,7 @@ public class FlyScript : MonoBehaviour
     {
         if (Random.Range(0, 10) < 1)//flying to food
         {
-            m_CurrentflyingPoint = FlyManager.s_FoodPoints[0].position;
+            m_CurrentflyingPoint = FlyManager.s_FoodPoints[Random.Range(0, 2)].position;
             b_IsFlyingToFood = true;
         }
         else//flying around
@@ -110,9 +110,13 @@ public class FlyScript : MonoBehaviour
     {
         if (other.transform.tag == "Weapon")
         {
-            //TODO: ADD SCORE(WITH FUNCTION)
             if (--m_CurrentLife <= 0)
+            {
+                InGamePanel.updateScore(m_MaxLife);
+                InGamePanel.addMoney(m_MaxLife);
                 Destroy(gameObject);
+            }
         }
     }
+    
 }

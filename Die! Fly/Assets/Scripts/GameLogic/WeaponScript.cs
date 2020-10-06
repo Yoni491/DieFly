@@ -17,10 +17,12 @@ public class WeaponScript : MonoBehaviour
     float m_WeaponSpeedMoving = 1;
     float m_MaxTimeOfAttack = 0.3f;
     float m_CurrentTimeOfAttack = 0f;
+    static GameObject s_WeaponSlot;
     void Start()
     {
         m_StartingWeaponSlotPos = m_WeaponSlot.transform.localPosition;
-        EquipWeapon(2);
+        s_WeaponSlot = m_WeaponSlot;
+        EquipWeapon(m_Weapons[2]);
     }
 
     // Update is called once per frame
@@ -45,17 +47,20 @@ public class WeaponScript : MonoBehaviour
             m_WeaponSlot.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
     }
-    void EquipWeapon(int i_WeaponNumber)
+    public static void EquipWeapon(GameObject i_ChoosedWeapon)
     {
-        GameObject weapon = Instantiate(m_Weapons[i_WeaponNumber], m_WeaponSlot.transform.position,Quaternion.identity, m_WeaponSlot.transform);
+        GameObject weapon = Instantiate(i_ChoosedWeapon, s_WeaponSlot.transform.position, Quaternion.identity, s_WeaponSlot.transform);
         weapon.transform.localRotation = Quaternion.identity;
     }
+
     public void AttackWithWeapon()
     {
         if (!m_isAttacking)
         {
             m_CurrentTimeOfAttack = 0;
-            m_WeaponSlot.GetComponent<Rigidbody>().velocity = Vector3.Normalize(m_attackingPoint.position - m_WeaponSlot.transform.position) * m_WeaponSpeedMoving;
+            m_WeaponSlot.GetComponent<Rigidbody>().velocity =
+                 Vector3.Normalize(m_attackingPoint.position - m_WeaponSlot.transform.position)
+                 * m_WeaponSpeedMoving;
             m_isAttacking = true;
         }
     }

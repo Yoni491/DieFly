@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fluid
   - Weapon
+  - Clicker
   layers:
   - Default
   - TransparentFX

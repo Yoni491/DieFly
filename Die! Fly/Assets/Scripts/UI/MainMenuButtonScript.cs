@@ -15,8 +15,9 @@ public class MainMenuButtonScript : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        InGamePanel.ReturnToMainMenu();
+        if(other.transform.tag!= "Weapon")
+            InGamePanel.ReturnToMainMenu();
     }
 }

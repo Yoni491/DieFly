@@ -32,7 +32,7 @@ public class FlyManager : MonoBehaviour
          if (m_Timer >= m_TimeToCreateFly)
          {
               m_Timer = 0;
-              m_TimeToCreateFly = Random.Range(1112f, 1111);
+              m_TimeToCreateFly = Random.Range(4f, 5);
               addNewFlyToGame();
          }
     }

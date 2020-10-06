@@ -223,6 +223,7 @@
     <Compile Include="Assets\Scripts\GameLogic\WeaponContainerScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\WeaponScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\WeaponStore.cs" />
+    <Compile Include="Assets\Scripts\UI\ClickerScript.cs" />
     <Compile Include="Assets\Scripts\UI\InGamePanel.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuButtonScript.cs" />
     <Compile Include="Assets\Scripts\UI\PanelManager.cs" />

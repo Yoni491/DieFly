@@ -7,83 +7,57 @@ using UnityEngine.UI;
 public class InGamePanel : MonoBehaviour
 {
     [SerializeField] Text m_ScoreText = null;
-    [SerializeField] Text m_ComboText = null;
-    [SerializeField] GameObject m_ComboPanel = null;
     static Text s_ScoreText;
-    static Text s_ComboText;
-    static GameObject s_ComboPanel;
-    public static int m_Score;
-    public static int m_Streak;
-    public static int m_Combo;
+    public static int s_Score;
     static float s_Timer;
-    static float s_LastFruitSliceTime;
-    static int s_ComboStreak;
-
-     public static void ReturnToMainMenu()
+    [SerializeField]
+    Text m_MoneyText = null;
+    static Text s_MoneyText;
+    public static int m_Money;
+    public static void ReturnToMainMenu()
      {
           SceneManager.LoadScene("MainMenu");
      }
 
-     private void Start()
-     {
-          s_ScoreText = m_ScoreText;
-          s_ComboText = m_ComboText;
-          s_ComboPanel = m_ComboPanel;
-     }
+    private void Start()
+    {
+        s_ScoreText = m_ScoreText;
+        s_ScoreText.text = "Score: " + s_Score;
+        s_MoneyText = m_MoneyText;
+    }
 
      private void Update()
      {
           s_Timer += Time.deltaTime;
      }
 
-     public static void updateScore(int scoreToAdd)
-     {
-          m_Score += scoreToAdd;
+    public static void updateScore(int scoreToAdd)
+    {
+        s_Score += scoreToAdd;
+        s_ScoreText.text = "Score: " + s_Score;
      }
+    public static void addMoney(int i_FlyLifeAmount)
+    {
+        if (i_FlyLifeAmount == 1)
+        {
+            m_Money += 1;
+        }
 
-     public static void addCombo(int comboToAdd)
-     {
-          if(comboToAdd == 0)
-          {
-               resetCombo();
-          }
+        else if (i_FlyLifeAmount == 3)
+        {
+            m_Money += 2;
+        }
 
-          else
-          {
-               if(s_Timer - s_LastFruitSliceTime < 0.25f || s_LastFruitSliceTime == 0)
-               {
-                    s_LastFruitSliceTime = s_Timer;
-                    s_ComboStreak++;
-               }
+        else if (i_FlyLifeAmount == 10)
+        {
+            m_Money += 5;
+        }
 
-               else
-               {
-                    if(s_ComboStreak <= 1)
-                    {
-                         resetCombo();
-                    }
+        displayNewMoneyValue();
+    }
 
-                    s_LastFruitSliceTime = s_Timer;
-                    s_ComboStreak = 1;
-
-               }
-
-               m_Combo += comboToAdd;
-               if(m_Combo > 1)
-               {
-                    s_ComboPanel.SetActive(true);
-               }
-
-               s_ComboText.text = m_Combo.ToString();
-          }
-     }
-
-     public static void resetCombo()
-     {
-          updateScore(m_Combo * (m_Combo / 10 > 2 ? m_Combo / 10 : 2));
-          s_LastFruitSliceTime = 0;
-          s_Timer = 0;
-          m_Combo = 0;
-          s_ComboPanel.SetActive(false);
-     }
+    public static void displayNewMoneyValue()
+    {
+        s_MoneyText.text = "Money: " + m_Money + "$";
+    }
 }

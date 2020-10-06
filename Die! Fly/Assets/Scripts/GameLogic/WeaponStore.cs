@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class WeaponStore : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] WeaponTank = null;
-    // Start is called before the first frame update
-    void Start()
+    public static void PurchaseWeapon(WeaponContainer i_ChoosedContainer)
     {
-        
-    }
+        if (i_ChoosedContainer.m_TheGlass.activeInHierarchy)
+        {
+            if (InGamePanel.m_Money >= i_ChoosedContainer.m_Price)
+            {
+                InGamePanel.m_Money -= i_ChoosedContainer.m_Price;
+                InGamePanel.displayNewMoneyValue();
+                WeaponScript.EquipWeapon(i_ChoosedContainer.m_TheWeapon);
+                i_ChoosedContainer.m_TheGlass.SetActive(false);
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        else
+        {
+            WeaponScript.EquipWeapon(i_ChoosedContainer.m_TheWeapon);
+        }
     }
 }

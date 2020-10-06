@@ -49,10 +49,10 @@ public class PanelManager : MonoBehaviour
      {
           if(b_PlayerLost)
           {
-               m_LostPopUpText.text = "Your score is: " + InGamePanel.m_Score.ToString();
+               m_LostPopUpText.text = "Your score is: " + InGamePanel.s_Score.ToString();
                m_LostPopUp.SetActive(true);
                b_PlayerLost = false;
-               InGamePanel.m_Score = 0;
+               InGamePanel.s_Score = 0;
           }
      }
 }

@@ -5,16 +5,29 @@ using UnityEngine;
 public class WeaponContainerScript : MonoBehaviour
 {
 
+    [SerializeField]
+    public GameObject m_TheGlass = null;
+    [SerializeField]
+    public GameObject m_TheWeapon = null;
+    [SerializeField]
+    public int m_Price = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnCollisionEnter(Collision collision)
     {
-        
+        //WeaponStore.PurchaseWeapon(this);
     }
+}
+public class WeaponContainer
+{
+    [SerializeField]
+    public GameObject m_TheGlass = null;
+    [SerializeField]
+    public GameObject m_TheWeapon = null;
+    [SerializeField]
+    public int m_Price = 0;
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        
+        WeaponStore.PurchaseWeapon(this);
     }
 }
