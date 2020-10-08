@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnvironmentScript : MonoBehaviour
 {
-
      [SerializeField]
      private GameObject[] m_Cars = null;
      [SerializeField]
@@ -16,7 +15,7 @@ public class EnvironmentScript : MonoBehaviour
      private float m_CarSpeed = 0.3f;
 
      // Start is called before the first frame update
-     void Start()
+     private void Start()
      {
           m_CarIndex = Random.Range(0, 2);
           m_Car = m_Cars[m_CarIndex];
@@ -24,7 +23,7 @@ public class EnvironmentScript : MonoBehaviour
      }
 
      // Update is called once per frame
-     void Update()
+     private void Update()
      {
           Vector3 carPosition = m_Car.transform.position;
 
@@ -34,13 +33,15 @@ public class EnvironmentScript : MonoBehaviour
 
      private void resetCar(Vector3 i_CarPosition)
      {
-          if (m_Car.transform.position.z >= m_EndPositions[m_PositionIndex].position.z)
+          if(m_Car.transform.position.z >= m_EndPositions[m_PositionIndex].position.z)
           {
                m_PositionIndex = Random.Range(0, 2);
-               m_Car.transform.position = new Vector3(m_StartPositions[m_PositionIndex].position.x, i_CarPosition.y, m_StartPositions[m_PositionIndex].position.z);
+               m_Car.transform.position = new Vector3(
+                    m_StartPositions[m_PositionIndex].position.x,
+                    i_CarPosition.y,
+                    m_StartPositions[m_PositionIndex].position.z);
                m_CarIndex = Random.Range(0, 3);
                m_Car = m_Cars[m_CarIndex];
           }
      }
-
 }

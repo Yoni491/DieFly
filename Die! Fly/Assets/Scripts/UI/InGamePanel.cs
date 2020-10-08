@@ -6,58 +6,61 @@ using UnityEngine.UI;
 
 public class InGamePanel : MonoBehaviour
 {
-    [SerializeField] Text m_ScoreText = null;
-    static Text s_ScoreText;
-    public static int s_Score;
-    static float s_Timer;
-    [SerializeField]
-    Text m_MoneyText = null;
-    static Text s_MoneyText;
-    public static int m_Money;
-    public static void ReturnToMainMenu()
+     [SerializeField]
+     private Text m_ScoreText = null;
+     private static Text s_ScoreText;
+     public static int m_Score;
+     private static float s_Timer;
+     [SerializeField]
+     private Text m_MoneyText = null;
+     private static Text s_MoneyText;
+     public static int m_Money;
+
+     public static void ReturnToMainMenu()
      {
           SceneManager.LoadScene("MainMenu");
      }
 
-    private void Start()
-    {
-        s_ScoreText = m_ScoreText;
-        s_ScoreText.text = "Score: " + s_Score;
-        s_MoneyText = m_MoneyText;
-    }
+     private void Start()
+     {
+          s_ScoreText = m_ScoreText;
+          s_ScoreText.text = "Score: " + m_Score;
+          s_MoneyText = m_MoneyText;
+     }
 
      private void Update()
      {
           s_Timer += Time.deltaTime;
      }
 
-    public static void updateScore(int scoreToAdd)
-    {
-        s_Score += scoreToAdd;
-        s_ScoreText.text = "Score: " + s_Score;
+     public static void updateScore(int scoreToAdd)
+     {
+          m_Score += scoreToAdd;
+          s_ScoreText.text = "Score: " + m_Score;
      }
-    public static void addMoney(int i_FlyLifeAmount)
-    {
-        if (i_FlyLifeAmount == 1)
-        {
-            m_Money += 1;
-        }
 
-        else if (i_FlyLifeAmount == 3)
-        {
-            m_Money += 2;
-        }
+     public static void addMoney(int i_FlyLifeAmount)
+     {
+          if(i_FlyLifeAmount == 1)
+          {
+               m_Money += 1;
+          }
 
-        else if (i_FlyLifeAmount == 10)
-        {
-            m_Money += 5;
-        }
+          else if(i_FlyLifeAmount == 3)
+          {
+               m_Money += 2;
+          }
 
-        displayNewMoneyValue();
-    }
+          else if(i_FlyLifeAmount == 10)
+          {
+               m_Money += 5;
+          }
 
-    public static void displayNewMoneyValue()
-    {
-        s_MoneyText.text = "Money: " + m_Money + "$";
-    }
+          displayNewMoneyValue();
+     }
+
+     public static void displayNewMoneyValue()
+     {
+          s_MoneyText.text = "Money: " + m_Money + "$";
+     }
 }

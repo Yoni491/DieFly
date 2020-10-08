@@ -6,13 +6,15 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-     [SerializeField] Text m_Scores = null;
-     [SerializeField] Text m_Dates = null;
-     static Text s_Score;
-     static Text s_Date;
-     static int m_MaxScores = 10;
-     static int m_ScoresAmount = 0;
-     static PlayerScore[] m_CurrentScores = new PlayerScore[m_MaxScores];
+     [SerializeField]
+     private Text m_Scores = null;
+     [SerializeField]
+     private Text m_Dates = null;
+     private static Text s_Score;
+     private static Text s_Date;
+     private static int m_MaxScores = 10;
+     private static int s_ScoresAmount;
+     private static PlayerScore[] m_CurrentScores = new PlayerScore[m_MaxScores];
 
      private void Start()
      {
@@ -26,10 +28,10 @@ public class ScoreScript : MonoBehaviour
 
           for(int i = 0; i < m_MaxScores; i++)
           {
-               if(i >= m_ScoresAmount)
+               if(i >= s_ScoresAmount)
                {
                     m_CurrentScores[i] = newScore;
-                    m_ScoresAmount++;
+                    s_ScoresAmount++;
                     break;
                }
 
@@ -47,7 +49,7 @@ public class ScoreScript : MonoBehaviour
           string leaderboardScore = "";
           string leaderboardDate = "";
 
-          for(int i = 0; i < m_ScoresAmount; i++)
+          for(int i = 0; i < s_ScoresAmount; i++)
           {
                leaderboardScore += (i + 1) + ". " + m_CurrentScores[i].m_Score + "\n";
                leaderboardDate += m_CurrentScores[i].ScoreDate + "\n";
@@ -66,8 +68,12 @@ public class PlayerScore
      public PlayerScore(int Score)
      {
           m_Score = Score;
-          m_ScoreDate =  System.DateTime.Now.ToString();
+          m_ScoreDate = DateTime.Now.ToString();
      }
 
-    public string ScoreDate { get => m_ScoreDate; set => m_ScoreDate = value; }
+     public string ScoreDate
+     {
+          get => m_ScoreDate;
+          set => m_ScoreDate = value;
+     }
 }

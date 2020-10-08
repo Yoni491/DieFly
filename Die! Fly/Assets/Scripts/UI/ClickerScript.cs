@@ -4,60 +4,62 @@ using UnityEngine;
 
 public class ClickerScript : MonoBehaviour
 {
-    [SerializeField]
-    GameObject m_Pointer=null;
-    [SerializeField]
-    Material m_startingMaterial = null;
-    [SerializeField]
-    Material m_HitMaterial = null;
-    static GameObject s_Pointer;
-    static Material s_HitMaterial;
-    static float s_TimeToBlink = 0;
-    static bool b_IsBlinking = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        s_Pointer = m_Pointer;
-        s_HitMaterial = m_HitMaterial;
-    }
+     [SerializeField]
+     private GameObject m_Pointer = null;
+     [SerializeField]
+     private Material m_startingMaterial = null;
+     [SerializeField]
+     private Material m_HitMaterial = null;
+     private static GameObject s_Pointer;
+     private static Material s_HitMaterial;
+     private static float s_TimeToBlink = 0;
+     private static bool b_IsBlinking;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.anyKey)
-        {
-            RaycastHit hit;
-            int layerMask = 7;
-            if (Physics.Raycast(transform.position, transform.forward, out hit,100.1f, layerMask))
-            {
-                if(hit.collider!=null)
-                {
-                    if (hit.collider.GetComponent<MainMenuButtonScript>() != null)
-                    {
-                        hit.collider.GetComponent<MainMenuButtonScript>().triggerClick();
-                    }
-                    else if(hit.collider.GetComponent<WeaponContainerScript>() != null)
-                    {
-                        hit.collider.GetComponent<WeaponContainerScript>().triggerClick();
-                    }
-                }
-            }
-        }
-        if (b_IsBlinking)
-        {
-            s_TimeToBlink += Time.deltaTime;
-            if (s_TimeToBlink >= 0.3f)
-            {
-                b_IsBlinking = false;
-                s_Pointer.GetComponent<MeshRenderer>().material = m_startingMaterial;
-                s_TimeToBlink = 0;
-            }
-        }
-    }
-    public static void MakePointerBlink()
-    {
-        s_Pointer.GetComponent<MeshRenderer>().material = s_HitMaterial;
-        b_IsBlinking = true;
-    }
+     // Start is called before the first frame update
+     private void Start()
+     {
+          s_Pointer = m_Pointer;
+          s_HitMaterial = m_HitMaterial;
+     }
 
+     // Update is called once per frame
+     private void Update()
+     {
+          if(Input.anyKey)
+          {
+               RaycastHit hit;
+               int layerMask = 7;
+               if(Physics.Raycast(transform.position, transform.forward, out hit, 100.1f, layerMask))
+               {
+                    if(hit.collider != null)
+                    {
+                         if(hit.collider.GetComponent<MainMenuButtonScript>() != null)
+                         {
+                              hit.collider.GetComponent<MainMenuButtonScript>().TriggerClick();
+                         }
+                         else if(hit.collider.GetComponent<WeaponContainer>() != null)
+                         {
+                              hit.collider.GetComponent<WeaponContainer>().triggerClick();
+                         }
+                    }
+               }
+          }
+
+          if(b_IsBlinking)
+          {
+               s_TimeToBlink += Time.deltaTime;
+               if(s_TimeToBlink >= 0.3f)
+               {
+                    b_IsBlinking = false;
+                    s_Pointer.GetComponent<MeshRenderer>().material = m_startingMaterial;
+                    s_TimeToBlink = 0;
+               }
+          }
+     }
+
+     public static void MakePointerBlink()
+     {
+          s_Pointer.GetComponent<MeshRenderer>().material = s_HitMaterial;
+          b_IsBlinking = true;
+     }
 }

@@ -7,18 +7,22 @@ using UnityEngine.UI;
 
 public class PanelManager : MonoBehaviour
 {
-     [SerializeField] GameObject m_HowToPopUp = null;
-     [SerializeField] GameObject m_ScoreboardPopUp = null;
-     [SerializeField] GameObject m_LostPopUp = null;
-     [SerializeField] Text m_LostPopUpText = null;
+     [SerializeField]
+     private GameObject m_HowToPopUp = null;
+     [SerializeField]
+     private GameObject m_ScoreboardPopUp = null;
+     [SerializeField]
+     private GameObject m_LostPopUp = null;
+     [SerializeField]
+     private Text m_LostPopUpText = null;
      public static bool b_PlayerLost;
 
-     public void startGame()
+     public void StartGame()
      {
           SceneManager.LoadScene("Game");
      }
 
-     public void showScores()
+     public void ShowScores()
      {
           ScoreScript.UpdateLeaderboard();
           m_ScoreboardPopUp.SetActive(true);
@@ -49,10 +53,10 @@ public class PanelManager : MonoBehaviour
      {
           if(b_PlayerLost)
           {
-               m_LostPopUpText.text = "Your score is: " + InGamePanel.s_Score.ToString();
+               m_LostPopUpText.text = "Your score is: " + InGamePanel.m_Score.ToString();
                m_LostPopUp.SetActive(true);
                b_PlayerLost = false;
-               InGamePanel.s_Score = 0;
+               InGamePanel.m_Score = 0;
           }
      }
 }
