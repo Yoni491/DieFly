@@ -12,7 +12,6 @@ public class MainManager : MonoBehaviour
     int m_Life = 100;
     public static int s_Life;
     public static Text s_LifeText;
-    
 
     private void Start()
     {

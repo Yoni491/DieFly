@@ -6,28 +6,16 @@ public class WeaponContainerScript : MonoBehaviour
 {
 
     [SerializeField]
-    public GameObject m_TheGlass = null;
+    private GameObject m_TheGlass = null;
     [SerializeField]
-    public GameObject m_TheWeapon = null;
+    private GameObject m_TheWeapon = null;
     [SerializeField]
-    public int m_Price = 0;
+    private int m_Price = 0;
+    [SerializeField]
+    private int m_Dmg=0;
 
-    void OnCollisionEnter(Collision collision)
+    public void triggerClick()
     {
-        //WeaponStore.PurchaseWeapon(this);
-    }
-}
-public class WeaponContainer
-{
-    [SerializeField]
-    public GameObject m_TheGlass = null;
-    [SerializeField]
-    public GameObject m_TheWeapon = null;
-    [SerializeField]
-    public int m_Price = 0;
-
-    void OnCollisionEnter(Collision collision)
-    {
-        WeaponStore.PurchaseWeapon(this);
+        WeaponStore.PurchaseWeapon(m_TheGlass, m_TheWeapon, m_Price,m_Dmg);
     }
 }

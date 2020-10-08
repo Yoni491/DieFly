@@ -10,6 +10,7 @@ public class WeaponScript : MonoBehaviour
     private GameObject[] m_Weapons = null;
     [SerializeField]
     private Transform m_attackingPoint = null;
+
     // Start is called before the first frame update
     bool m_isAttacking = false;
     Vector3 m_StartingWeaponSlotPos;
@@ -18,6 +19,8 @@ public class WeaponScript : MonoBehaviour
     float m_MaxTimeOfAttack = 0.3f;
     float m_CurrentTimeOfAttack = 0f;
     static GameObject s_WeaponSlot;
+    static GameObject s_EquippedWeapon;
+    public static int s_CurrentWeaponDmg =1;
     void Start()
     {
         m_StartingWeaponSlotPos = m_WeaponSlot.transform.localPosition;
@@ -49,8 +52,12 @@ public class WeaponScript : MonoBehaviour
     }
     public static void EquipWeapon(GameObject i_ChoosedWeapon)
     {
-        GameObject weapon = Instantiate(i_ChoosedWeapon, s_WeaponSlot.transform.position, Quaternion.identity, s_WeaponSlot.transform);
-        weapon.transform.localRotation = Quaternion.identity;
+        if (s_EquippedWeapon != null)
+        {
+            Destroy(s_EquippedWeapon);
+        }
+        s_EquippedWeapon = Instantiate(i_ChoosedWeapon, s_WeaponSlot.transform.position, Quaternion.identity, s_WeaponSlot.transform);
+        s_EquippedWeapon.transform.localRotation = Quaternion.identity;
     }
 
     public void AttackWithWeapon()

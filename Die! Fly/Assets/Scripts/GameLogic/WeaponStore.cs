@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class WeaponStore : MonoBehaviour
 {
-    public static void PurchaseWeapon(WeaponContainer i_ChoosedContainer)
+    public static void PurchaseWeapon(GameObject i_Container , GameObject i_TheWeapon, int i_Price,int i_Dmg)
     {
-        if (i_ChoosedContainer.m_TheGlass.activeInHierarchy)
+        if (i_Container.activeInHierarchy)
         {
-            if (InGamePanel.m_Money >= i_ChoosedContainer.m_Price)
+            if (InGamePanel.m_Money >= i_Price)
             {
-                InGamePanel.m_Money -= i_ChoosedContainer.m_Price;
+                InGamePanel.m_Money -= i_Price;
                 InGamePanel.displayNewMoneyValue();
-                WeaponScript.EquipWeapon(i_ChoosedContainer.m_TheWeapon);
-                i_ChoosedContainer.m_TheGlass.SetActive(false);
+                i_Container.SetActive(false);
+                WeaponScript.EquipWeapon(i_TheWeapon);
+                WeaponScript.s_CurrentWeaponDmg = i_Dmg;
             }
         }
-
         else
         {
-            WeaponScript.EquipWeapon(i_ChoosedContainer.m_TheWeapon);
+            WeaponScript.EquipWeapon(i_TheWeapon);
+            WeaponScript.s_CurrentWeaponDmg = i_Dmg;
         }
     }
 }

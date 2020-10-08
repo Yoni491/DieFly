@@ -121,10 +121,43 @@ public class FlyManager : MonoBehaviour
                     addNewFlyToGame(1);
                 }
                 m_Timer = 0;
-                m_TimeToCreateFly = Random.Range(2f, 3);
+                m_TimeToCreateFly = Random.Range(2f, 2.5f);
             }
         }
-        
+        if (s_Level == 6)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                int FlyType = Random.Range(0, 10);
+                if (FlyType >= 3)
+                {
+                    addNewFlyToGame(2);
+                }
+                else
+                {
+                    addNewFlyToGame(1);
+                }
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(1.5f, 2.5f);
+            }
+        }
+        if (s_Level >= 7)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                int FlyType = Random.Range(0, 10);
+                if (FlyType >= 3)
+                {
+                    addNewFlyToGame(2);
+                }
+                else
+                {
+                    addNewFlyToGame(1);
+                }
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(1f, 1);
+            }
+        }
     }
 
     private void addNewFlyToGame(int i_FlyType)

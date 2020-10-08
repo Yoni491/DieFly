@@ -110,7 +110,10 @@ public class FlyScript : MonoBehaviour
     {
         if (other.transform.tag == "Weapon")
         {
-            if (--m_CurrentLife <= 0)
+            m_CurrentLife -= WeaponScript.s_CurrentWeaponDmg;
+            ClickerScript.MakePointerBlink();
+            //ADD DEATH SOUND
+            if (m_CurrentLife <= 0)
             {
                 InGamePanel.updateScore(m_MaxLife);
                 InGamePanel.addMoney(m_MaxLife);
