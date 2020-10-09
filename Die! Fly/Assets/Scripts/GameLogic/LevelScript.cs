@@ -10,13 +10,7 @@ public class LevelScript : MonoBehaviour
      [SerializeField]
      private Text m_Level = null;
      private float m_Timer = 0;
-     private float m_LevelTime = 60;
-
-     // Start is called before the fir
-     private void Start()
-     {
-
-     }
+     private float m_LevelTime = 30;
 
      // Update is called once per frame
      private void Update()

@@ -1,18 +1,22 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ButtonScript
+    - ClickerScript
+    - DamageScript
     - EnvironmentScript
     - FlyManager
     - FlyScript
     - GvrEditorEmulator
     - GvrHeadset
     - InGamePanel
+    - LevelScript
     - MainManager
     - MainMenuButtonScript
     - PanelManager
     - PlayerController
     - ScoreScript
-    - WeaponContainerScript
+    - WeaponContainer
     - WeaponScript
     - WeaponStore
     UnityEditor.Graphs.dll:
@@ -23,6 +27,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -60,6 +65,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -69,29 +78,29 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9754}
+      Script: {instanceID: 9756}
     - Class: 114
-      Script: {instanceID: 9940}
+      Script: {instanceID: 9942}
     - Class: 114
-      Script: {instanceID: 9984}
+      Script: {instanceID: 9986}
     - Class: 114
-      Script: {instanceID: 10042}
+      Script: {instanceID: 10044}
     - Class: 114
-      Script: {instanceID: 10188}
+      Script: {instanceID: 10166}
     - Class: 114
-      Script: {instanceID: 10436}
+      Script: {instanceID: 10190}
     - Class: 114
-      Script: {instanceID: 10456}
+      Script: {instanceID: 10438}
     - Class: 114
-      Script: {instanceID: 10528}
+      Script: {instanceID: 10458}
     - Class: 114
-      Script: {instanceID: 10818}
+      Script: {instanceID: 10530}
     - Class: 114
-      Script: {instanceID: 10866}
+      Script: {instanceID: 10820}
     - Class: 114
-      Script: {instanceID: 11056}
+      Script: {instanceID: 10868}
     - Class: 114
-      Script: {instanceID: 11100}
+      Script: {instanceID: 11058}
     - Class: 114
       Script: {instanceID: 11230}
     - Class: 114
@@ -103,16 +112,18 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 11808}
+      Script: {instanceID: 11810}
     - Class: 114
-      Script: {instanceID: 11822}
+      Script: {instanceID: 11824}
+    - Class: 114
+      Script: {instanceID: 11854}
+    - Class: 114
+      Script: {instanceID: 739522}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 134
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -147,30 +158,42 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 102
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9754}
+      Script: {instanceID: 9756}
     - Class: 114
-      Script: {instanceID: 9940}
+      Script: {instanceID: 9942}
     - Class: 114
-      Script: {instanceID: 9984}
+      Script: {instanceID: 9986}
     - Class: 114
-      Script: {instanceID: 10436}
+      Script: {instanceID: 10166}
     - Class: 114
-      Script: {instanceID: 10496}
+      Script: {instanceID: 10190}
     - Class: 114
-      Script: {instanceID: 10866}
+      Script: {instanceID: 10438}
     - Class: 114
-      Script: {instanceID: 11100}
+      Script: {instanceID: 10498}
+    - Class: 114
+      Script: {instanceID: 11102}
+    - Class: 114
+      Script: {instanceID: 11242}
     - Class: 114
       Script: {instanceID: 11406}
     - Class: 114
-      Script: {instanceID: 11718}
+      Script: {instanceID: 11512}
     - Class: 114
-      Script: {instanceID: 11822}
+      Script: {instanceID: 11720}
+    - Class: 114
+      Script: {instanceID: 11824}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -326,10 +349,10 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 9b9b50d808216b482ead8628bfb68188
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: WeaponContainerScript
+    className: WeaponContainer
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -374,12 +397,6 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FruitScript
-  - hash:
-      serializedVersion: 2
       Hash: b781422d477ffa400b0ad9a8c8ef3e82
     assemblyName: Assembly-CSharp.dll
     namespaceName: PW
@@ -390,6 +407,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: PW
     className: OnClickCoverHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 5c2bc9b37c268353196fe4d6a568d8be
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ClickerScript
   - hash:
       serializedVersion: 2
       Hash: ff7d3100dcac4699fa2b5abb996d38b1
@@ -506,7 +529,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 235074bd1cf179fc96bdb6141edd62af
+      Hash: 3593187b8c21d31dc44dd2ed26370fe6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InGamePanel
@@ -536,7 +559,7 @@ ScriptsOnlyBuild:
     className: FillCupHelper
   - hash:
       serializedVersion: 2
-      Hash: 8ae8f17ed5a72c912a859b78dee1874f
+      Hash: 2c62d5d97358ffe9df6f10bcde28ea32
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PanelManager
@@ -614,7 +637,7 @@ ScriptsOnlyBuild:
     className: GvrTrackedController
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 8d10aca5ff68b386f0ad769425575a40
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FlyScript
@@ -704,12 +727,6 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BombScript
-  - hash:
-      serializedVersion: 2
       Hash: e1300922cc039f41ab46a47f4cb05898
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -758,7 +775,7 @@ ScriptsOnlyBuild:
     className: CookingGameObject
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 110ce9681df6f188b60e867f7ca435c4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainManager
@@ -818,7 +835,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 3fc86b1484dc1aa34daa069612f46680
+      Hash: 664b286de1e03a8b663738d338969a5b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WeaponStore
@@ -872,7 +889,7 @@ ScriptsOnlyBuild:
     className: GvrControllerVisual
   - hash:
       serializedVersion: 2
-      Hash: 131ed6983392e99674ff59bcdf7dec36
+      Hash: 0db0baef589231403ee2baae8d6a48aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -882,6 +899,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: GoogleVR.VideoDemo
     className: ScrubberEvents
+  - hash:
+      serializedVersion: 2
+      Hash: 74250c454a8c22a4dd73ff1a0534aa83
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonScript
   - hash:
       serializedVersion: 2
       Hash: 62e02691a10983616e840bcf554a5540
@@ -1010,7 +1033,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: fc842d2d2af3c85239815c1701638cb2
+      Hash: f9d18bd5885f9e1c2967c1e84de521bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnvironmentScript
@@ -1058,6 +1081,12 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
+      Hash: 658bf30f78ca04213e447b0381a5b6b4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelScript
+  - hash:
+      serializedVersion: 2
       Hash: 01bdf339a887de280d38eeb519dfda0d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1098,6 +1127,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DamageScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

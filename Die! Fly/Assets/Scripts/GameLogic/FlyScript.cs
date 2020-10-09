@@ -6,6 +6,8 @@ public class FlyScript : MonoBehaviour
 {
      [SerializeField]
      private AudioClip m_DeathSound = null;
+    [SerializeField]
+    private GameObject m_DmgObject=null;
      private Vector3 m_CurrentflyingPoint = new Vector3(0, 0, 0);
      private int m_CurrentLife, m_MaxLife;
      private int m_FlyingMethod;
@@ -39,7 +41,7 @@ public class FlyScript : MonoBehaviour
                }
 
                m_AttackTimer += Time.deltaTime;
-               if(m_AttackTimer >= 1)
+               if(m_AttackTimer >= 0.5f)
                {
                     m_AttackTimer = 0;
                     MainManager.LoseLife(1);
@@ -64,8 +66,7 @@ public class FlyScript : MonoBehaviour
      private void flyingAlgorithm()
      {
           float step = m_Speed * Time.deltaTime;
-          if((FlyManager.s_PlayerInteractionPoints[1].position.y - 0.3 > transform.position.y) && !m_IsFlyingToPoint
-          ) //make it enum !@!@#!@#!@#!@#
+          if((FlyManager.s_PlayerInteractionPoints[1].position.y - 0.3 > transform.position.y) && !m_IsFlyingToPoint)
           {
                GetComponent<Rigidbody>().velocity = new Vector3(0, m_Speed, 0);
           }
@@ -98,7 +99,7 @@ public class FlyScript : MonoBehaviour
 
      private void flyToNewPoint()
      {
-          if(Random.Range(0, 10) < 1) //flying to food
+          if(Random.Range(0, 30) < 1) //flying to food
           {
                m_CurrentflyingPoint = FlyManager.s_FoodPoints[Random.Range(0, 2)].position;
                m_IsFlyingToFood = true;
@@ -127,11 +128,12 @@ public class FlyScript : MonoBehaviour
           {
                m_CurrentLife -= WeaponScript.m_CurrentWeaponDmg;
                ClickerScript.MakePointerBlink();
+            m_DmgObject.SetActive(true);
                if(m_CurrentLife <= 0)
                {
                     InGamePanel.updateScore(m_MaxLife);
                     InGamePanel.addMoney(m_MaxLife);
-                    AudioSource.PlayClipAtPoint(m_DeathSound, transform.position);
+                    AudioSource.PlayClipAtPoint(m_DeathSound, transform.position,0.25f);
                     Destroy(gameObject);
                }
           }

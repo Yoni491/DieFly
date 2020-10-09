@@ -28,7 +28,16 @@ public class FlyManager : MonoBehaviour
      private void Update()
      {
           m_Timer += Time.deltaTime;
-          if(s_Level == 1)
+        if (s_Level == 1)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                addNewFlyToGame(0);
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(1.5f, 2f);
+            }
+        }
+        if (s_Level == 2)
           {
                if(m_Timer >= m_TimeToCreateFly)
                {
@@ -43,26 +52,7 @@ public class FlyManager : MonoBehaviour
                     }
 
                     m_Timer = 0;
-                    m_TimeToCreateFly = Random.Range(3.5f, 4);
-               }
-          }
-
-          if(s_Level == 2)
-          {
-               if(m_Timer >= m_TimeToCreateFly)
-               {
-                    int FlyType = Random.Range(0, 10);
-                    if(FlyType >= 5)
-                    {
-                         addNewFlyToGame(1);
-                    }
-                    else
-                    {
-                         addNewFlyToGame(0);
-                    }
-
-                    m_Timer = 0;
-                    m_TimeToCreateFly = Random.Range(3.5f, 4);
+                    m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
                }
           }
 
@@ -71,11 +61,7 @@ public class FlyManager : MonoBehaviour
                if(m_Timer >= m_TimeToCreateFly)
                {
                     int FlyType = Random.Range(0, 10);
-                    if(FlyType == 9)
-                    {
-                         addNewFlyToGame(2);
-                    }
-                    else if(FlyType >= 3)
+                    if(FlyType >= 7)
                     {
                          addNewFlyToGame(1);
                     }
@@ -85,9 +71,8 @@ public class FlyManager : MonoBehaviour
                     }
 
                     m_Timer = 0;
-                    m_TimeToCreateFly = Random.Range(2f, 3);
-               }
-
+                    m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
+            }
           }
 
           if(s_Level == 4)
@@ -95,7 +80,27 @@ public class FlyManager : MonoBehaviour
                if(m_Timer >= m_TimeToCreateFly)
                {
                     int FlyType = Random.Range(0, 10);
-                    if(FlyType >= 6)
+                    if(FlyType >= 3)
+                    {
+                         addNewFlyToGame(1);
+                    }
+                    else
+                    {
+                         addNewFlyToGame(0);
+                    }
+
+                    m_Timer = 0;
+                    m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
+            }
+
+          }
+
+          if(s_Level == 5)
+          {
+               if(m_Timer >= m_TimeToCreateFly)
+               {
+                    int FlyType = Random.Range(0, 10);
+                    if(FlyType >= 9)
                     {
                          addNewFlyToGame(2);
                     }
@@ -109,29 +114,9 @@ public class FlyManager : MonoBehaviour
                     }
 
                     m_Timer = 0;
-                    m_TimeToCreateFly = Random.Range(2f, 3);
-               }
+                    m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
+            }
 
-          }
-
-          if(s_Level == 5)
-          {
-               if(m_Timer >= m_TimeToCreateFly)
-               {
-                    int flyType = Random.Range(0, 10);
-
-                    if(flyType >= 3)
-                    {
-                         addNewFlyToGame(2);
-                    }
-                    else
-                    {
-                         addNewFlyToGame(1);
-                    }
-
-                    m_Timer = 0;
-                    m_TimeToCreateFly = Random.Range(2f, 2.5f);
-               }
           }
 
           if(s_Level == 6)
@@ -140,7 +125,7 @@ public class FlyManager : MonoBehaviour
                {
                     int flyType = Random.Range(0, 10);
 
-                    if(flyType >= 3)
+                    if(flyType >= 7)
                     {
                          addNewFlyToGame(2);
                     }
@@ -150,11 +135,31 @@ public class FlyManager : MonoBehaviour
                     }
 
                     m_Timer = 0;
-                    m_TimeToCreateFly = Random.Range(1.5f, 2.5f);
-               }
+                    m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
+            }
           }
 
-          if(s_Level >= 7)
+          if(s_Level == 7)
+          {
+               if(m_Timer >= m_TimeToCreateFly)
+               {
+                    int flyType = Random.Range(0, 10);
+
+                    if(flyType >= 5)
+                    {
+                         addNewFlyToGame(2);
+                    }
+                    else
+                    {
+                         addNewFlyToGame(1);
+                    }
+
+                    m_Timer = 0;
+                    m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
+            }
+          }
+
+          if(s_Level == 8)
           {
                if(m_Timer >= m_TimeToCreateFly)
                {
@@ -170,10 +175,29 @@ public class FlyManager : MonoBehaviour
                     }
 
                     m_Timer = 0;
-                    m_TimeToCreateFly = Random.Range(1f, 1);
-               }
+                    m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
+            }
           }
-     }
+        if (s_Level >= 9)
+        {
+            if (m_Timer >= m_TimeToCreateFly)
+            {
+                int flyType = Random.Range(0, 10);
+
+                if (flyType >= 1)
+                {
+                    addNewFlyToGame(2);
+                }
+                else
+                {
+                    addNewFlyToGame(1);
+                }
+
+                m_Timer = 0;
+                m_TimeToCreateFly = Random.Range(0.1f, 0.2f);
+            }
+        }
+    }
 
      private void addNewFlyToGame(int i_FlyType)
      {

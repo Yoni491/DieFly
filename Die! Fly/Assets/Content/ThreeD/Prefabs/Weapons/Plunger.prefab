@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2650592528435653409
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6515532450886717137}
-  - component: {fileID: 3158916776998036330}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Weapon
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6515532450886717137
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650592528435653409}
-  m_LocalRotation: {x: 0.24051173, y: -0, z: -0, w: 0.97064626}
-  m_LocalPosition: {x: 0.414, y: 0.438, z: 0.217}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 950312733414695743}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 27.834002, y: 0, z: 0}
---- !u!136 &3158916776998036330
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650592528435653409}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.07630484
-  m_Height: 1.0000002
-  m_Direction: 1
-  m_Center: {x: -0.42369527, y: 1.8122808e-15, z: 2.6231382e-16}
 --- !u!1 &4450017222972599878
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +29,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5658128892742995021}
-  - {fileID: 6515532450886717137}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
