@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeaponColliderScript : MonoBehaviour
 {
-    [SerializeField]
-    CapsuleCollider collider = null;
-
+     [SerializeField]
+     CapsuleCollider collider = null;
 }

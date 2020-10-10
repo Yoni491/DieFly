@@ -28,16 +28,17 @@ public class FlyManager : MonoBehaviour
      private void Update()
      {
           m_Timer += Time.deltaTime;
-        if (s_Level == 1)
-        {
-            if (m_Timer >= m_TimeToCreateFly)
-            {
-                addNewFlyToGame(0);
-                m_Timer = 0;
-                m_TimeToCreateFly = Random.Range(1.5f, 2f);
-            }
-        }
-        if (s_Level == 2)
+          if(s_Level == 1)
+          {
+               if(m_Timer >= m_TimeToCreateFly)
+               {
+                    addNewFlyToGame(0);
+                    m_Timer = 0;
+                    m_TimeToCreateFly = Random.Range(1.5f, 2f);
+               }
+          }
+
+          if(s_Level == 2)
           {
                if(m_Timer >= m_TimeToCreateFly)
                {
@@ -72,7 +73,7 @@ public class FlyManager : MonoBehaviour
 
                     m_Timer = 0;
                     m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
-            }
+               }
           }
 
           if(s_Level == 4)
@@ -91,7 +92,7 @@ public class FlyManager : MonoBehaviour
 
                     m_Timer = 0;
                     m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
-            }
+               }
 
           }
 
@@ -115,7 +116,7 @@ public class FlyManager : MonoBehaviour
 
                     m_Timer = 0;
                     m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
-            }
+               }
 
           }
 
@@ -136,7 +137,7 @@ public class FlyManager : MonoBehaviour
 
                     m_Timer = 0;
                     m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
-            }
+               }
           }
 
           if(s_Level == 7)
@@ -156,7 +157,7 @@ public class FlyManager : MonoBehaviour
 
                     m_Timer = 0;
                     m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
-            }
+               }
           }
 
           if(s_Level == 8)
@@ -176,28 +177,29 @@ public class FlyManager : MonoBehaviour
 
                     m_Timer = 0;
                     m_TimeToCreateFly = Random.Range(0.6f, 0.8f);
-            }
+               }
           }
-        if (s_Level >= 9)
-        {
-            if (m_Timer >= m_TimeToCreateFly)
-            {
-                int flyType = Random.Range(0, 10);
 
-                if (flyType >= 1)
-                {
-                    addNewFlyToGame(2);
-                }
-                else
-                {
-                    addNewFlyToGame(1);
-                }
+          if(s_Level >= 9)
+          {
+               if(m_Timer >= m_TimeToCreateFly)
+               {
+                    int flyType = Random.Range(0, 10);
 
-                m_Timer = 0;
-                m_TimeToCreateFly = Random.Range(0.1f, 0.2f);
-            }
-        }
-    }
+                    if(flyType >= 1)
+                    {
+                         addNewFlyToGame(2);
+                    }
+                    else
+                    {
+                         addNewFlyToGame(1);
+                    }
+
+                    m_Timer = 0;
+                    m_TimeToCreateFly = Random.Range(0.1f, 0.2f);
+               }
+          }
+     }
 
      private void addNewFlyToGame(int i_FlyType)
      {
@@ -220,7 +222,7 @@ public class FlyManager : MonoBehaviour
                m_FlyPrefabs[i_FlyType],
                m_SpawnPoints[0].position,
                Quaternion.identity,
-               this.transform);
+               transform);
           butterfly.GetComponent<FlyScript>().CreateFly(life, speed, 1);
      }
 }

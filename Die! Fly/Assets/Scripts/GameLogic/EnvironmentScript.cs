@@ -14,7 +14,6 @@ public class EnvironmentScript : MonoBehaviour
      private int m_PositionIndex, m_CarIndex;
      private float m_CarSpeed = 0.3f;
 
-     // Start is called before the first frame update
      private void Start()
      {
           m_CarIndex = Random.Range(0, 2);
@@ -22,7 +21,6 @@ public class EnvironmentScript : MonoBehaviour
 
      }
 
-     // Update is called once per frame
      private void Update()
      {
           Vector3 carPosition = m_Car.transform.position;

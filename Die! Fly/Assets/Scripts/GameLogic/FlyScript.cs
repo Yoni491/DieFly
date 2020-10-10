@@ -6,8 +6,8 @@ public class FlyScript : MonoBehaviour
 {
      [SerializeField]
      private AudioClip m_DeathSound = null;
-    [SerializeField]
-    private GameObject m_DmgObject=null;
+     [SerializeField]
+     private GameObject m_DmgObject = null;
      private Vector3 m_CurrentflyingPoint = new Vector3(0, 0, 0);
      private int m_CurrentLife, m_MaxLife;
      private int m_FlyingMethod;
@@ -128,12 +128,12 @@ public class FlyScript : MonoBehaviour
           {
                m_CurrentLife -= WeaponScript.m_CurrentWeaponDmg;
                ClickerScript.MakePointerBlink();
-            m_DmgObject.SetActive(true);
+               m_DmgObject.SetActive(true);
                if(m_CurrentLife <= 0)
                {
                     InGamePanel.updateScore(m_MaxLife);
                     InGamePanel.addMoney(m_MaxLife);
-                    AudioSource.PlayClipAtPoint(m_DeathSound, transform.position,0.25f);
+                    AudioSource.PlayClipAtPoint(m_DeathSound, transform.position, 0.25f);
                     Destroy(gameObject);
                }
           }
