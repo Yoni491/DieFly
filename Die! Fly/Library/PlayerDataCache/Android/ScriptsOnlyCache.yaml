@@ -27,7 +27,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -86,41 +85,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10044}
     - Class: 114
-      Script: {instanceID: 10166}
+      Script: {instanceID: 10126}
     - Class: 114
-      Script: {instanceID: 10190}
+      Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10438}
+      Script: {instanceID: 10192}
     - Class: 114
-      Script: {instanceID: 10458}
+      Script: {instanceID: 10440}
     - Class: 114
-      Script: {instanceID: 10530}
+      Script: {instanceID: 10460}
     - Class: 114
-      Script: {instanceID: 10820}
+      Script: {instanceID: 10532}
     - Class: 114
-      Script: {instanceID: 10868}
+      Script: {instanceID: 10822}
     - Class: 114
-      Script: {instanceID: 11058}
+      Script: {instanceID: 10870}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 11062}
     - Class: 114
-      Script: {instanceID: 11242}
+      Script: {instanceID: 11234}
     - Class: 114
-      Script: {instanceID: 11342}
+      Script: {instanceID: 11246}
     - Class: 114
-      Script: {instanceID: 11406}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11410}
     - Class: 114
-      Script: {instanceID: 11536}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11810}
+      Script: {instanceID: 11540}
     - Class: 114
-      Script: {instanceID: 11824}
+      Script: {instanceID: 11814}
     - Class: 114
-      Script: {instanceID: 11854}
+      Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 739522}
+      Script: {instanceID: 11858}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -175,32 +174,30 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9986}
     - Class: 114
-      Script: {instanceID: 10166}
+      Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10190}
+      Script: {instanceID: 10192}
     - Class: 114
-      Script: {instanceID: 10438}
+      Script: {instanceID: 10440}
     - Class: 114
-      Script: {instanceID: 10498}
+      Script: {instanceID: 10500}
     - Class: 114
-      Script: {instanceID: 11102}
+      Script: {instanceID: 11106}
     - Class: 114
-      Script: {instanceID: 11242}
+      Script: {instanceID: 11246}
     - Class: 114
-      Script: {instanceID: 11406}
+      Script: {instanceID: 11410}
     - Class: 114
-      Script: {instanceID: 11512}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 11720}
+      Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 11824}
+      Script: {instanceID: 11828}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -395,6 +392,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DamageScript
   - hash:
       serializedVersion: 2
       Hash: b781422d477ffa400b0ad9a8c8ef3e82
@@ -661,6 +664,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: a6ce80ea3be12bc6b92cede1e7970e7b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WeaponColliderScript
+  - hash:
+      serializedVersion: 2
       Hash: feb9a5a121d15fa3654d4e50a5233045
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -889,7 +898,7 @@ ScriptsOnlyBuild:
     className: GvrControllerVisual
   - hash:
       serializedVersion: 2
-      Hash: 0db0baef589231403ee2baae8d6a48aa
+      Hash: 131ed6983392e99674ff59bcdf7dec36
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -907,7 +916,7 @@ ScriptsOnlyBuild:
     className: ButtonScript
   - hash:
       serializedVersion: 2
-      Hash: 62e02691a10983616e840bcf554a5540
+      Hash: 4bb6c40000c2e0faff52e17ec9abe078
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WeaponScript
@@ -1127,12 +1136,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DamageScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
